@@ -1,0 +1,283 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+* {
+  /*Alterações que servem para a pagina toda*/
+  margin: 0;
+  padding: 0; /*espaçamento ao redor de um elemento*/
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  transition: all 0.3s ease; /*tempo de resposta dos elementos*/
+}
+
+/*CSS do SLider */
+.slider {
+  width: 800px;
+  height: 500px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.slides {
+  width: 500%;
+  height: 500px;
+  display: flex;
+}
+
+.slides input {
+  display: none;
+}
+
+.slide {
+  width: 20%;
+  transition: 2s;
+}
+
+.slide img {
+  width: 600px;
+  height: 500px;
+}
+
+/*css da navegação manual*/
+
+.navigation-manual {
+  position: absolute;
+  width: 800px;
+  margin-top: -40px;
+  display: flex;
+  justify-content: center;
+}
+
+.manual-btn {
+  border: 2px solid #ffffff;
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 1s;
+}
+
+.manual-btn:not(:last-child) {
+  margin-right: 40px;
+}
+
+.manual-btn:hover {
+  background: #fbfafa;
+}
+
+#radio1:checked ~ .first {
+  margin-left: 0;
+}
+
+#radio2:checked ~ .first {
+  margin-left: -20%;
+}
+
+#radio3:checked ~ .first {
+  margin-left: -40%;
+}
+
+/*css da navegação automática*/
+
+.navigation-auto {
+  position: absolute;
+  display: flex;
+  width: 800px;
+  justify-content: center;
+  margin-top: 460px;
+}
+
+.navigation-auto div {
+  border: 2px solid #0d0d0d;
+  padding: 5px;
+  border-radius: 10px;
+  transition: 1s;
+}
+
+/*CSS da tabela */
+table,
+th,
+td {
+  /*config da parte de dentro tabela*/
+  width: 650px;
+  border: 2px solid #171717;
+  border-collapse: collapse;
+  align-items: center;
+}
+td {
+  text-align: center;
+}
+.tabela {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #98989b;
+}
+
+/*CSS da lista de elementos */
+li {
+  display: block;
+  float: flex;
+  padding: 18px;
+  position: relative;
+  text-decoration: none;
+  transition-duration: 0.5s;
+}
+li:hover {
+  background: #151515;
+  cursor: pointer;
+}
+
+ul li ul {
+  background-color: #1b1a1a;
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  transition: all 0.5s ease;
+  margin-top: 18px;
+  left: 0;
+  display: none;
+}
+ul li:hover > ul,
+ul li ul:hover {
+  visibility: visible;
+  opacity: 1;
+  display: block;
+}
+ul li ul li {
+  clear: both;
+  width: 100%;
+}
+
+/*CSS do navbar */
+.nav-links li ul {
+  background-color: #1a1a1a;
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  transition: all 0.5s ease;
+  margin-top: 18px;
+  display: none;
+}
+nav {
+  z-index: 999;
+  display: block;
+  height: 70px;
+  width: 100%;
+  background: #393737;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+nav .navbar {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  max-width: 1300px;
+  margin: auto;
+  padding: 0 30px;
+  justify-content: space-between;
+}
+nav .navbar a {
+  font-size: 30px;
+  font-weight: 500;
+  color: rgb(255, 254, 254);
+  text-decoration: none;
+}
+.navbar .nav-links {
+  display: flex;
+}
+.navbar .nav-links li {
+  margin: 0 8px;
+  list-style: none;
+  display: flex;
+}
+.navbar .nav-links a {
+  font-size: 18px;
+  font-weight: 400;
+  opacity: 1;
+}
+.navbar .nav-links a:hover {
+  opacity: 1;
+}
+.navbar .appearance {
+  display: flex;
+  align-items: center;
+}
+
+/*CSS do home*/
+.home-content {
+  width: 100%;
+  background: #98989b;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 60px;
+}
+
+.home-content h2 {
+  color: #ffffff;
+  font-size: 50px;
+}
+.home-content h3 {
+  color: #24292d;
+  font-size: 42px;
+  margin-top: -8px;
+}
+.home-content h3 span {
+  color: #f8f8f8;
+}
+
+.home-content p {
+  color: #000000;
+  font-size: 16px;
+  width: 45%;
+  text-align: justify;
+  margin: 4px 0 30px 0;
+}
+.home-content a {
+  color: #fff;
+  font-size: 20px;
+  padding: 12px 24px;
+  border-radius: 6px;
+  text-decoration: none;
+  background: #161616;
+}
+.home-content a i {
+  transform: rotate(45deg);
+  font-size: 16px;
+}
+.home-content a:hover {
+  background: rgb(208, 205, 205);
+}
+
+/*CSS do formulário*/
+.forms {
+  width: 100%;
+  padding-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.forms form {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+
+.form {
+  display: flex;
+  gap: 5px;
+  justify-content: space-between;
+}
+
+/*CSS dos botões like*/
+.btn {
+  background: transparent;
+  border: none;
+  margin: -50px;
+
+  font-size: 40px;
+  outline: none;
+  color: rgb(9, 9, 9);
+}
+
+.btn i:hover {
+  cursor: pointer;
+}
