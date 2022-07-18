@@ -1,140 +1,154 @@
 <!DOCTYPE html>
 <html lang="pt-br" dir="ltr">
-
-<head>
-  <meta charset="UTF-8">
-  <title> Site </title>
-  <link rel="stylesheet" href="style.css">
-  <!--Conector do css -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://kit.fontawesome.com/f6dcf461c1.js" crossorigin="anonymous"></script>
-</head>
-
+  <head>
+    <meta charset="UTF-8">
+    <title> Site </title>
+    <link rel="stylesheet" href="style.css"> <!--Conector do css -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/f6dcf461c1.js" crossorigin="anonymous"></script>
+   </head>
 <body>
   <nav>
-    <div class="navbar">
-      <!--Classe da barra de navegação -->
+    <div class="navbar"> <!--Classe da barra de navegação -->
       <div class="logo"><a href="#">Plataforma digital Evo</a></div>
       <ul class="nav-links">
         <li><a href="#">Principal</a></li>
         <li><a href="#">Sobre</a></li>
         <li><a href="#">Habilidades</a></li>
-        <li><a href="#">Serviços</a>
-        </li>
+        <li><a href="#">Serviços</a>        
+        </li> 
         <li><a href="#">Contato</a></li>
       </ul>
-    </div>
+   </div>
   </nav>
-  <section class="home-content">
-    <!--Conteúdo do home-->
+  <section class="home-content"> <!--Conteúdo do home-->
     <div class="texts">
       <h2 class="text">Bem-vindo(a)</h2>
-      <h3 class="text">Jogos digitais Evo, <span>mundo gamer</span></h3>
+      <h3 class="text">Jogos digitais Evo,, <span>mundo gamer</span></h3>
       <br>
       <h4>Jogos em nuvem, sem ocupar espaçco em sua maquina.</h4>
       <br>
-      <div class="button">
-      </div>
-      <div class="slider">
-        <!--O carroussel-->
-        <div class="slides">
-          <input type="radio" name="radio-btn" id="radio1">
-          <input type="radio" name="radio-btn" id="radio2">
-          <input type="radio" name="radio-btn" id="radio3">
-          <div class="slide first">
-            <img src="public/img/COD.png" alt="">
-            <Button onclick="Toggle1()" id="btnh1" class="btn"><i class="fas fa-heart"></i></Button>
-          </div>
-          <div class="slide">
-            <img src="public/img/God_of_War.png" alt="">
-            <Button onclick="Toggle2()" id="btnh2" class="btn"><i class="fas fa-heart"></i></Button>
-          </div>
-          <div class="slide">
-            <img src="public/img/Halo.png" alt="">
-            <Button onclick="Toggle3()" id="btnh3" class="btn"><i class="fas fa-heart"></i></Button>
-          </div>
-
+      <div class="button"> 
+    </div>      
+    <div class="slider"> <!--O carroussel-->
+      <div class="slides"> 
+        <input type="radio" name="radio-btn" id="radio1">
+        <input type="radio" name="radio-btn" id="radio2">
+        <input type="radio" name="radio-btn" id="radio3"> 
+        <div class="slide first">
+          <img src="public/img/COD.png" alt="">
+          <Button onclick="Toggle1()" id="btnh1" class="btn"><i class="fas fa-heart"></i></Button><!-- Favoritar as imagens-->
         </div>
-
-      </div>
-
+        <div class="slide">
+          <img src="public/img/God_of_War.png" alt="">
+          <Button onclick="Toggle2()" id="btnh2" class="btn"><i class="fas fa-heart"></i></Button>
+        </div>
+        <div class="slide">
+          <img src="public/img/Halo.png" alt="">
+          <Button onclick="Toggle3()" id="btnh3" class="btn"><i class="fas fa-heart"></i></Button>
+        </div>          
+      </div>        
+      </div>  <!--Navegação do carroussel-->    
       <div class="navigation-manual">
         <label for="radio1" class="manual-btn"></label>
         <label for="radio2" class="manual-btn"></label>
-        <label for="radio3" class="manual-btn"></label>
-      </div>
+        <label for="radio3" class="manual-btn"></label>   
+      </div>     
+    </div> 
     </div>
-    </div>
-    </div>
-    <div class="tabela">
+  </div>
+  <div class="tabela"> <!-- A tabela dinamica-->
+    <table class="initial-table">
+    </table>
+  </div>
+  <div id="wrapper">
+  <table align='center' cellspacing=2 cellpadding=5 id="data_table" border=1>
+    <tr>
+      <th>Nome</th>
+      <th>Categoria</th>
+      <th>Plataforma</th>
+      <th>Tempo</th>
+      </tr>
 
+    <tr id="row1">
+      <td id="nome_row1">Call of Duty</td>
+      <td id="categ_row1">Guerra</td>
+      <td id="plat_row1">Todas</td>
+      <td id="temp_row1">50 horas</td>
+      <td>
+      <input type="button" id="edit_button1" value="Edit" class="edit" onclick="edit_row('1')">
+      <input type="button" id="save_button1" value="Save" class="save" onclick="save_row('1')">
+      <input type="button" value="Delete" class="delete" onclick="delete_row('1')">
+      </td>
+    </tr>
 
-      <!-- A tabela-->
-      <table class="initial-table">
-      </table>
-    </div>
-    <div class="forms">
-      <form action="" id="formulario" method="post" name="formulario">
-        <div class="form">
-          <label for="" class="form-label">Jogos:</label>
-          <input type="text" id="taste">
-        </div>
-        <div class="form">
-          <label for="" class="form-label">Categoria:</label>
-          <input type="text" id="six-parts">
-        </div>
-        <div class="form">
-          <label for="" class="form-label">Plataforma</label>
-          <input type="text" id="eight-parts">
-        </div>
-        <div class="form">
-          <label for="" class="form-label">Tempo de jogo:</label>
-          <input type="text" id="valid-days">
-        </div>
+    <tr id="row2">
+      <td id="nome_row2">God Of War</td>
+      <td id="categ_row2">Guerra antiga</td>
+      <td id="plat_row2">PlayStation</td>
+      <td id="temp_row3">60 horas</td>
+      <td>
+      <input type="button" id="edit_button2" value="Edit" class="edit" onclick="edit_row('2')">
+      <input type="button" id="save_button2" value="Save" class="save" onclick="save_row('2')">
+      <input type="button" value="Delete" class="delete" onclick="delete_row('2')">
+      </td>
+    </tr>
 
-        <div class="footer">
-          <button id="submit" type="button" class="botao" onclick="enviar()">Enviar</button>
-          <button id="submit" type="button" class="botao" onclick="deletar()">Excluir</button>
-        </div>
-      </form>
-    </div>
-    <script> //Script da função dos botões do tipo toggle(efeito de click)
-      var btnvar1 = document.getElementById('btnh1');
-      var btnvar2 = document.getElementById('btnh2');
-      var btnvar3 = document.getElementById('btnh3');
-      function Toggle1() {
-        if (btnvar1.style.color == "red") {
-          btnvar1.style.color = "black"
-        }
-        else {
-          btnvar1.style.color = "red"
-        }
+   <tr id="row3">
+      <td id="nome_row3">Halo</td>
+      <td id="categ_row3">Guerra futurística</td>
+      <td id="plat_row3">Xbox</td>
+      <td id="temp_row3">45 horas</td>
+      <td>
+      <input type="button" id="edit_button3" value="Edit" class="edit" onclick="edit_row('3')">
+      <input type="button" id="save_button3" value="Save" class="save" onclick="save_row('3')">
+      <input type="button" value="Delete" class="delete" onclick="delete_row('3')">
+      </td>
+    </tr>
+
+    <tr>
+      <td><input type="text" id="nome_new"></td>
+      <td><input type="text" id="categ_new"></td>
+      <td><input type="text" id="plat_new"></td>
+      <td><input type="text" id="temp_new"></td>
+      <td><input type="button" class="add" onclick="add_row();" value="Adicionar"></td>
+    </tr>
+
+  </table>
+</div>
+  <script> //Script da função dos botões do tipo toggle(efeito de click)
+    var btnvar1 = document.getElementById('btnh1');
+    var btnvar2 = document.getElementById('btnh2');
+    var btnvar3 = document.getElementById('btnh3');
+    function Toggle1(){
+      if (btnvar1.style.color =="red") {   // As Cores dos botões
+        btnvar1.style.color = "black"
       }
-      function Toggle2() {
-        if (btnvar2.style.color == "red") {
-          btnvar2.style.color = "black"
-        }
-        else {
-          btnvar2.style.color = "red"
-        }
+      else{
+        btnvar1.style.color = "red"
       }
-      function Toggle3() {
-        if (btnvar3.style.color == "red") {
-          btnvar3.style.color = "black"
-        }
-        else {
-          btnvar3.style.color = "red"
-        }
+    }
+    function Toggle2(){
+      if (btnvar2.style.color =="red") {
+        btnvar2.style.color = "black"
       }
-    </script>
-    <br>
-    <br>
-    <br>
-    <br>
-    <footer class="footer">
-      <p id="copyright"> &copy; Copyright Hamburgueria Evo - 2021</p>
-    </footer>
-    <script src="script.js"></script>
+      else{
+        btnvar2.style.color = "red"
+      }
+    }
+    function Toggle3(){
+      if (btnvar3.style.color =="red") {
+        btnvar3.style.color = "black"
+      }
+      else{
+        btnvar3.style.color = "red"
+      }
+    }
+  </script>  
+  <br>
+  <br>
+  <br>
+  <br>
+  <script src="script.js"></script> <!-- Chamando o javascript-->
 </body>
-
 </html>
